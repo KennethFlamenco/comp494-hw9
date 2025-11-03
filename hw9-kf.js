@@ -69,5 +69,92 @@ var testNumber = 0;
 var testBoolean = false;
 if(testNumber == testBoolean){
   //due to type corercion javascript converts booleans to numbers and false = 0 so its able to do the comparison of 0 == 0 making it true
-  console.log("testNumber and testBoolean are loosely equal.")
+  console.log("testNumber and testBoolean are loosely equal.");
 }
+
+//Exercise 12
+var versionA = 10.0;
+var versionB = "10.0";
+if(versionA !== versionB){
+console.log("the variables are not equal");
+}
+else{
+  console.log("the variables are equal!");
+}
+
+//Exercise 13
+let isLoggedIn = true;
+let isSubscriber = true;
+let isTrialExpired = false;
+if((isLoggedIn && isSubscriber) || (isLoggedIn && !isTrialExpired)){
+  console.log("Access Granted!");
+} else {
+  console.log("Access Denied!");
+}
+
+//Exercise 14
+let conditionA = true;
+let conditionB = false;
+if (conditionA) {
+  if (!conditionB) {
+    console.log("XOR Success");
+  } else {
+    console.log("XOR Fail");
+  }
+} else {
+  if (conditionB) {
+    console.log("XOR Success");
+  } else {
+    console.log("XOR Fail");
+  }
+}
+
+//Exercise 15
+let scriptLoadType = "deferred";
+let loadStatus;
+if(scriptLoadType == "deferred"){
+   loadStatus = "Non-Blocking";
+} else {
+   loadStatus = "Potential Blocking";
+}
+
+//Rewritten 
+let scriptLoadType = "deferred";
+let loadStatusTernary = (scriptLoadType === "deferred") ? "Non-blocking" : "Potentially Blocking";
+
+//Exercise 16
+/*the purpose of this function to calculate the time it takes to parse HTML and execute JavaScript*/
+function calculateRenderTime(){
+  // Add in code for function
+}
+
+//Exercise 17 
+var date = new Date();
+console.log("Today is " + date.toLocaleDateString());
+
+//Exercise 18
+var val1 = 20;
+var val2 = "5";
+sumResult = val1 + val2;
+diffResult = val1 - val2;
+console.log(sumResult);
+console.log(diffResult);
+/* the reason these results are so different is because the + operations has to purposes one is for mathematical
+equations when adding two numbers and the second is combining two strings so the console recognizes the string in 
+the equation and decides to put together the two objects instead of adding while - operation is only for mathematical
+arithemtic equations so it does the math operation instead */
+
+//Exercise 19
+var dataInput = 484;
+if (typeof dataInput === "number") {
+  console.log("Input is numeric.");
+} else {
+  dataInput = true;
+  console.log(typeof dataInput);
+}
+
+//Exercise 20
+var textLayer = "Interactive Layer Loaded";
+document.body.innerHTML = "<h1>" + textLayer + "</h1>";
+/*if this script was placed in the head HTML without defer or async attributes it will throw an error because the body
+element might not exist yet so it will try to access a element that doesnt exist and throw an error*/
